@@ -1,6 +1,6 @@
 # ArraySorting
 ## To look through the project you should:
-1)Open the server for the project (for example you can use 'LiveServer' VSCode extension.
+1)Open the server for the project (for example you can use 'LiveServer' VSCode extension. <br />
 2)Open the index.html
 thats all.
 
