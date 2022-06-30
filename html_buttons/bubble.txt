@@ -1,0 +1,29 @@
+<h3 class="sorting_method__name ">Сортування бульбашкою</h3>
+                            <div class="content">
+                                <div class="main_picture">
+                                    <img src="./sources/sorts_pictures/bubble.gif" alt="bubble sort picture">
+                                </div>
+                                <div class="article">
+                                    Сортування бульбашкою - один із найвідоміших алгоритмів сортування. Тут потрібно послідовно порівнювати значення
+                                    сусідніх елементів і міняти числа місцями, якщо попереднє виявляється більшим за наступне. Таким чином, елементи з
+                                    великими значеннями виявляються в кінці списку, а з меншими залишаються на початку.
+                                    
+                                    Цей алгоритм вважається навчальним і не майже застосовується практично через низьку ефективність: він повільно працює на
+                                    тестах, у яких маленькі елементи (їх називають «черепахами») стоять наприкінці масиву. Однак на ньому засновані багато
+                                    інших методів, наприклад, шейкерне сортування та сортування гребінцем.
+                                </div>
+                            </div>
+                            <div class="difficulty">
+                                <div class="time">
+                                    <div class="time_diff">Складність за часом</div>
+                                    <div class="times">
+                                        <span class="time_sort best">Гірший час:O(n²)</span>
+                                        <span class="time_sort average">Середній час:O(n²)</span>
+                                        <span class="time_sort worst">Кращий час:O(n)</span>
+                                    </div>
+                                </div>
+                                <div class="memory">
+                                    <span class="memory_usage">Затрати пам'яті</span>
+                                    <div class="memory_value">O(1)</div>
+                                </div>
+                            </div>

@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="sources\array.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Shalimar&family=Teko&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+  <meta name="viewport" content="initial-scale=1">
+  <title>Array Sorting - кращий метод сортування</title>
+</head>
+
+<body>
+  <div class="page-container">
+    <header>
+      <div class="header-info">
+        <a href="#" class="logo">
+          <img src="sources\array.png" alt="" class="logo_img">
+          <p class="logo_name">Array
+            Sorting</p>
+        </a>
+        <ul class="menu">
+          <a href="#input">
+            <li class="li_1">Введення<div class="li_selected"></div>
+            </li>
+          </a>
+          <a href="#processing">
+            <li class="li_2">Обробка<div class="li_selected"></div>
+            </li>
+          </a>
+          <a href="#result">
+            <li class="li_3">Результат<div class="li_selected"></div>
+            </li>
+          </a>
+          <a href="#sorts">
+            <li class="li_4">Методи сортування<div class="li_selected"></div>
+            </li>
+          </a>
+        </ul>
+      </div>
+      <div class="page-progress-container">
+        <div class="page-progress"></div>
+      </div>
+    </header>
+    <main class="main">
+      <div class="input main-section" id="input">
+        <div class="d1">
+          <h1 class="data">Ввід данних
+            <hr class="data_hr">
+          </h1>
+        </div>
+        <div class="sort_details lighting_cards_green">
+          <button class="sort-visualization-btn"><a target="_blank" href="./sorting_visualization.html">Візуалізація</a></button>
+          <div class="input_header_wrap">
+            <div class="input_header">Оберіть спосіб Введення</div>
+          </div>
+          <div class="sorting_burrons__wrap">
+            <button class="settings_btn btn open-popup"><img src="./sources/main/input/settings.png"
+                class="img_btn_settings" alt=""> Налаштувати</button>
+            <button class="settings_btn reload_btn btn" id="reloadBtn"><img src="./sources/main/input/reload.png"
+                class="img_btn_reload" alt=""> Нове введення</button>
+          </div>
+          <div class="cards_wrap">
+            <div class="input_card card_ta">
+              <div class="card_info">
+                Заповнення вручну <span class="card_info__tip">?</span>
+              </div>
+              <div class="tarea tarea_input">
+                <textarea name="" id="array_input_ta" class="array_input_tarea" cols="65" rows="14"
+                  placeholder="Введіть ваші дані сюди"></textarea>
+              </div>
+            </div>
+            <div class="cards_or">АБО
+              <hr>
+            </div>
+            <div class="input_card card_upload">
+              <div class="card_info">
+                Вивантаження файлу
+              </div>
+              <div class="card_upload__content">
+                <div class="upload_arr">
+                  <input type="file" id="file">
+                  <label for="file"></label>
+                </div>
+                <button class="upload_btn btn">
+                  <div class="upload_btn__contained">Підтвердити</div>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="confirm_data_btn btn">
+            <p class="data_btn_describe">Відсортувати дані</p>
+          </div>
+        </div>
+        <div class="section_ending">
+          <div class="lines lines_1">
+            <div class="figure"></div>
+          </div>
+        </div>
+      </div>
+      <div class="processing main-section" id="processing">
+        <div class="d1 title_proc">
+          <h1 class="data data_proc">Обробка
+            <hr class="data_hr proc_hr">
+          </h1>
+        </div>
+        <div class="sorting_cards">
+          <div class="bubblesort sort_card lighting_cards_yellow">
+            <div class="sorting_view">
+              <div class="sort_method_title sort_method_title_1">Сортування Бульбашкою</div>
+              <div class="sorting_load">
+                <div class="sortbar_text"></div>
+                <div class="sort_load_bar sort_load_bar_bubble"></div>
+              </div>
+              <hr class="hr_sorting_card">
+              <div class="sort_analysis">
+                <div class="fields sa_badge red_badge">
+                  <div class="name">Поле:</div>
+                  <div class="value">Значення:</div>
+                </div>
+                <div class="sort_analysis_time sa_badge">
+                  <div class="sa_name"></div>
+                  <div class="sa_value"></div>
+                </div>
+                <div class="sort_analysis_iteration sa_badge">
+                  <div class="sa_name"></div>
+                  <div class="sa_value"></div>
+                </div>
+                <div class="sort_analysis_last_item sa_badge">
+                  <div class="sa_name"></div>
+                  <div class="sa_value"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="shake_sort sort_card lighting_cards_yellow">
+            <div class="sorting_view">
+              <div class="sort_method_title sort_method_title_2">Перемішування</div>
+              <div class="sorting_load">
+                <div class="sortbar_text"></div>
+                <div class="sort_load_bar"></div>
+              </div>
+              <hr class="hr_sorting_card">
+              <div class="sort_analysis">
+                <div class="fields sa_badge red_badge">
+                  <div class="name">Поле:</div>
+                  <div class="value">Значення:</div>
+                </div>
+                <div class="sort_analysis_time sa_badge">
+                  <div class="sa_name"></div>
+                  <div class="sa_value"></div>
+                </div>
+                <div class="sort_analysis_iteration sa_badge">
+                  <div class="sa_name"></div>
+                  <div class="sa_value"></div>
+                </div>
+                <div class="sort_analysis_last_item sa_badge">
+                  <div class="sa_name"></div>
+                  <div class="sa_value"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="combsort sort_card lighting_cards_yellow">
+            <div class="sorting_view">
+              <div class="sort_method_title sort_method_title_3">Сортування Гребінцем</div>
+              <div class="sorting_load">
+                <div class="sortbar_text"></div>
+                <div class="sort_load_bar"></div>
+              </div>
+              <hr class="hr_sorting_card">
+              <div class="sort_analysis">
+                <div class="fields sa_badge red_badge">
+                  <div class="name">Поле:</div>
+                  <div class="value">Значення:</div>
+                </div>
+                <div class="sort_analysis_time sa_badge">
+                  <div class="sa_name"></div>
+                  <div class="sa_value"></div>
+                </div>
+                <div class="sort_analysis_iteration sa_badge">
+                  <div class="sa_name"></div>
+                  <div class="sa_value"></div>
+                </div>
+                <div class="sort_analysis_last_item sa_badge">
+                  <div class="sa_name"></div>
+                  <div class="sa_value"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="insertion_sort sort_card lighting_cards_yellow">
+            <div class="sorting_view">
+              <div class="sort_method_title sort_method_title_4">Сортування Вставками</div>
+              <div class="sorting_load">
+                <div class="sortbar_text"></div>
+                <div class="sort_load_bar"></div>
+              </div>
+              <hr class="hr_sorting_card">
+              <div class="sort_analysis">
+                <div class="fields sa_badge red_badge">
+                  <div class="name">Поле:</div>
+                  <div class="value">Значення:</div>
+                </div>
+                <div class="sort_analysis_time sa_badge">
+                  <div class="sa_name"></div>
+                  <div class="sa_value"></div>
+                </div>
+                <div class="sort_analysis_iteration sa_badge">
+                  <div class="sa_name"></div>
+                  <div class="sa_value"></div>
+                </div>
+                <div class="sort_analysis_last_item sa_badge">
+                  <div class="sa_name"></div>
+                  <div class="sa_value"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="selection_sort sort_card lighting_cards_yellow">
+            <div class="sorting_view">
+              <div class="sort_method_title sort_method_title_5">Сортування Вибором</div>
+              <div class="sorting_load">
+                <div class="sortbar_text"></div>
+                <div class="sort_load_bar"></div>
+              </div>
+              <hr class="hr_sorting_card">
+              <div class="sort_analysis">
+                <div class="fields sa_badge red_badge">
+                  <div class="name">Поле:</div>
+                  <div class="value">Значення:</div>
+                </div>
+                <div class="sort_analysis_time sa_badge">
+                  <div class="sa_name"></div>
+                  <div class="sa_value"></div>
+                </div>
+                <div class="sort_analysis_iteration sa_badge">
+                  <div class="sa_name"></div>
+                  <div class="sa_value"></div>
+                </div>
+                <div class="sort_analysis_last_item sa_badge">
+                  <div class="sa_name"></div>
+                  <div class="sa_value"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="quick_sort sort_card lighting_cards_yellow">
+            <div class="sorting_view">
+              <div class="sort_method_title sort_method_title_6">Швидке Сортування</div>
+              <div class="sorting_load">
+                <div class="sortbar_text"></div>
+                <div class="sort_load_bar"></div>
+              </div>
+              <hr class="hr_sorting_card">
+              <div class="sort_analysis">
+                <div class="fields sa_badge red_badge">
+                  <div class="name">Поле:</div>
+                  <div class="value">Значення:</div>
+                </div>
+                <div class="sort_analysis_time sa_badge">
+                  <div class="sa_name"></div>
+                  <div class="sa_value"></div>
+                </div>
+                <div class="sort_analysis_iteration sa_badge">
+                  <div class="sa_name"></div>
+                  <div class="sa_value"></div>
+                </div>
+                <div class="sort_analysis_last_item sa_badge">
+                  <div class="sa_name"></div>
+                  <div class="sa_value"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="merge_sort sort_card lighting_cards_yellow">
+            <div class="sorting_view">
+              <div class="sort_method_title sort_method_title_7">Злиття</div>
+              <div class="sorting_load">
+                <div class="sortbar_text"></div>
+                <div class="sort_load_bar"></div>
+              </div>
+              <hr class="hr_sorting_card">
+              <div class="sort_analysis">
+                <div class="fields sa_badge red_badge">
+                  <div class="name">Поле:</div>
+                  <div class="value">Значення:</div>
+                </div>
+                <div class="sort_analysis_time sa_badge">
+                  <div class="sa_name"></div>
+                  <div class="sa_value"></div>
+                </div>
+                <div class="sort_analysis_iteration sa_badge">
+                  <div class="sa_name"></div>
+                  <div class="sa_value"></div>
+                </div>
+                <div class="sort_analysis_last_item sa_badge">
+                  <div class="sa_name"></div>
+                  <div class="sa_value"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="pyramidal_sort sort_card lighting_cards_yellow">
+            <div class="sorting_view">
+              <div class="sort_method_title sort_method_title_8">Пірамідальність</div>
+              <div class="sorting_load">
+                <div class="sortbar_text"></div>
+                <div class="sort_load_bar"></div>
+              </div>
+              <hr class="hr_sorting_card">
+              <div class="sort_analysis">
+                <div class="fields sa_badge red_badge">
+                  <div class="name">Поле:</div>
+                  <div class="value">Значення:</div>
+                </div>
+                <div class="sort_analysis_time sa_badge">
+                  <div class="sa_name"></div>
+                  <div class="sa_value"></div>
+                </div>
+                <div class="sort_analysis_iteration sa_badge">
+                  <div class="sa_name"></div>
+                  <div class="sa_value"></div>
+                </div>
+                <div class="sort_analysis_last_item sa_badge">
+                  <div class="sa_name"></div>
+                  <div class="sa_value"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="shell_sort sort_card lighting_cards_yellow">
+            <div class="sorting_view">
+              <div class="sort_method_title sort_method_title_9">Сортування Шелла</div>
+              <div class="sorting_load">
+                <div class="sortbar_text"></div>
+                <div class="sort_load_bar"></div>
+              </div>
+              <hr class="hr_sorting_card">
+              <div class="sort_analysis">
+                <div class="fields sa_badge red_badge">
+                  <div class="name">Поле:</div>
+                  <div class="value">Значення:</div>
+                </div>
+                <div class="sort_analysis_time sa_badge">
+                  <div class="sa_name"></div>
+                  <div class="sa_value"></div>
+                </div>
+                <div class="sort_analysis_iteration sa_badge">
+                  <div class="sa_name"></div>
+                  <div class="sa_value"></div>
+                </div>
+                <div class="sort_analysis_last_item sa_badge">
+                  <div class="sa_name"></div>
+                  <div class="sa_value"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="team_sort sort_card lighting_cards_yellow">
+            <div class="sorting_view">
+              <div class="sort_method_title sort_method_title_10">Командне Сортування</div>
+              <div class="sorting_load">
+                <div class="sortbar_text"></div>
+                <div class="sort_load_bar"></div>
+              </div>
+              <hr class="hr_sorting_card">
+              <div class="sort_analysis">
+                <div class="fields sa_badge red_badge">
+                  <div class="name">Поле:</div>
+                  <div class="value">Значення:</div>
+                </div>
+                <div class="sort_analysis_time sa_badge">
+                  <div class="sa_name"></div>
+                  <div class="sa_value"></div>
+                </div>
+                <div class="sort_analysis_iteration sa_badge">
+                  <div class="sa_name"></div>
+                  <div class="sa_value"></div>
+                </div>
+                <div class="sort_analysis_last_item sa_badge">
+                  <div class="sa_name"></div>
+                  <div class="sa_value"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="bucket_sort sort_card lighting_cards_yellow">
+            <div class="sorting_view">
+              <div class="sort_method_title sort_method_title_11">Сортування Комірками</div>
+              <div class="sorting_load">
+                <div class="sortbar_text"></div>
+                <div class="sort_load_bar"></div>
+              </div>
+              <hr class="hr_sorting_card">
+              <div class="sort_analysis">
+                <div class="fields sa_badge red_badge">
+                  <div class="name">Поле:</div>
+                  <div class="value">Значення:</div>
+                </div>
+                <div class="sort_analysis_time sa_badge">
+                  <div class="sa_name"></div>
+                  <div class="sa_value"></div>
+                </div>
+                <div class="sort_analysis_iteration sa_badge">
+                  <div class="sa_name"></div>
+                  <div class="sa_value"></div>
+                </div>
+                <div class="sort_analysis_last_item sa_badge">
+                  <div class="sa_name"></div>
+                  <div class="sa_value"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modified_bubbl sort_card lighting_cards_yellow">
+            <div class="sorting_view">
+              <div class="sort_method_title sort_method_title_12">Модифікація Бульбашки</div>
+              <div class="sorting_load">
+                <div class="sortbar_text"></div>
+                <div class="sort_load_bar"></div>
+              </div>
+              <hr class="hr_sorting_card">
+              <div class="sort_analysis">
+                <div class="fields sa_badge red_badge">
+                  <div class="name">Поле:</div>
+                  <div class="value">Значення:</div>
+                </div>
+                <div class="sort_analysis_time sa_badge">
+                  <div class="sa_name"></div>
+                  <div class="sa_value"></div>
+                </div>
+                <div class="sort_analysis_iteration sa_badge">
+                  <div class="sa_name"></div>
+                  <div class="sa_value"></div>
+                </div>
+                <div class="sort_analysis_last_item sa_badge">
+                  <div class="sa_name"></div>
+                  <div class="sa_value"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="section_ending">
+          <div class="lines lines_2">
+            <div class="figure figure_2"></div>
+          </div>
+        </div>
+      </div>
+      <div class="result main-section" id="result">
+        <div class="d1 title_result">
+          <h1 class="data data_result">Результат
+            <hr class="data_hr result_hr">
+          </h1>
+        </div>
+        <div class="result_typesort lighting_cards_orange">
+          <div class="img_deco_cover">
+            <img src="/sources/decorations/result_deco.gif" alt="sorting array picture" class="sorting_a_deco">
+          </div>
+          <div class="result-typesort-info">
+            <div class="result_typesort_header"><span class="description_typesort_header">Кращим методом
+                сортування під ваші дані є...</span><span class="fastest_func"></span>
+            </div>
+            <hr style="margin-top: 20px;">
+          </div>
+          <div class="img_deco_cover_2">
+            <img src="/sources/decorations/result_deco.gif" alt="sorting array picture" class="sorting_a_deco">
+          </div>
+        </div>
+        <div class="result_typesort_split">
+          <div class="result_typesort_bestresult lighting_cards_orange">
+            <div class="result_typesort_bestresult_title">
+              <span class="result_typesort_bestresult_title_border">
+                Інформація про <span class="result_typesort_bestresult_fastfunc"></span>
+              </span>
+            </div>
+            <hr class="orange_result_hr">
+            <div class="fastest-function-article">
+            </div>
+          </div>
+          <div class="result_typesort_sorts lighting_cards_orange">
+            <div class="result_typesort_bestresult_title">
+              <span class="result_typesort_bestresult_title_border">
+                Виконання методів сортування
+              </span>
+            </div>
+            <hr class="orange_result_hr">
+            <div class="result_sorting_types_time_area">
+              <p class="title_result_sorting_types_time_area">
+                Час за який було виконано сортування
+              </p>
+              <div class="container_output">
+                <div class="container_flex_names">
+                  <div class="sortname sortname_1">сортування бульбашкою</div>
+                  <div class="sortname sortname_1">сортування перемішуванням</div>
+                  <div class="sortname sortname_1">сортування гребінцем</div>
+                  <div class="sortname sortname_1">сортування вставками</div>
+                  <div class="sortname sortname_1">сортування злиттям</div>
+                  <div class="sortname sortname_1">сортування вибором</div>
+                  <div class="sortname sortname_1">швидке сортування</div>
+                  <div class="sortname sortname_1">пірамідальне сортування</div>
+                </div>
+                <div class="white_line_between"></div>
+                <div class="container_flex_values">
+                  <div class="sortname sortname_2 bubble">сортування перемішуванням</div>
+                  <div class="sortname sortname_2 mix">сортування перемішуванням</div>
+                  <div class="sortname sortname_2 comb">сортування гребінцем</div>
+                  <div class="sortname sortname_2 ins">сортування вставками</div>
+                  <div class="sortname sortname_2 sel">сортування вибором</div>
+                  <div class="sortname sortname_2 quick">швидке сортування</div>
+                  <div class="sortname sortname_2 merge">сортування злиттям</div>
+                  <div class="sortname sortname_2 pyram">пірамідальне сортування</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="result_array_output lighting_cards_orange">
+          <h2 class="result-array-output-title">
+            Відсортовані дані
+          </h2>
+          <div class="tarea tarea_result">
+            <textarea name="resultOutput" id="resultOutput" class="tarea_output" cols="225" rows="20"
+              placeholder="тут буде відсортованим ваш масив..." readonly></textarea>
+          </div>
+          <div class="result_data_container">
+            <div class="btn copy_data_btn">
+              <p class="data_btn_describe">Скопіювати дані</p>
+            </div>
+            <div class="btn btn_download_array" id="dwnld_array"><img src="/sources/result_section/download_btn.png"
+                alt="" width="30px" height="30px" class="img_dwnld_btn"></div>
+          </div>
+        </div>
+        <div class="section_ending">
+          <div class="lines lines_3">
+            <div class="figure figure_3"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sorts main-section" id="sorts">
+        <div class="d1 title_sorts">
+          <h1 class="data data_sorts">Методи сортування
+            <hr class="data_hr sorts_hr">
+          </h1>
+        </div>
+        <div class="sort_methods_container">
+          <div class="sorting_type_wrap">
+            <div class="sorting_type flag_left">бульбашкове сортування та його покращення
+            </div>
+
+          </div>
+          <div class="bubble">
+            <div class="sorting_method lighting_cards_red bubbl bubbl-h h">
+              <div class="bubbl-container h-container l-container h-rotate">
+                <div class="bubbl-header h-header l-header">Сортування Бульбашкою</div>
+                <div class="bubbl-article h-article l-article">
+                  Сортування обміном або сортування бульбашкою є простим алгоритмом сортування. Хоча
+                  алгоритм є одним із найпростіших алгоритмів сортування, його ефективність є досить
+                  низькою.
+                  <a href="https://uk.wikipedia.org/wiki/%D0%A1%D0%BE%D1%80%D1%82%D1%83%D0%B2%D0%B0%D0%BD%D0%BD%D1%8F_%D0%B1%D1%83%D0%BB%D1%8C%D0%B1%D0%B0%D1%88%D0%BA%D0%BE%D1%8E"
+                    target="_blank">Вікіпедія</a>
+                </div>
+                <div class="bubbl-btn h-btn l-btn">Ознайомитись</div>
+
+              </div>
+            </div>
+            <div class="sorting_method lighting_cards_red mixn mixn-h h">
+              <div class="mixn-container h-container r-container h-rotate">
+                <div class="h-header r-header">Перемішування</div>
+                <div class="mixn-article h-article r-article">
+                  Сортування змішуванням (англ. Cocktail sort) — один із різновидів алгоритму
+                  сортування бульбашкою.Cортування відбувається в обох напрямках. Цей алгоритм лише
+                  трішки складніший за сортування бульбашкою, однак, вирішує так звану проблему
+                  «черепах».
+                  <a href="https://uk.wikipedia.org/wiki/%D0%A1%D0%BE%D1%80%D1%82%D1%83%D0%B2%D0%B0%D0%BD%D0%BD%D1%8F_%D0%B7%D0%BC%D1%96%D1%88%D1%83%D0%B2%D0%B0%D0%BD%D0%BD%D1%8F%D0%BC"
+                    target="_blank">Вікіпедія</a>
+                </div>
+                <div class="mixn-btn h-btn r-btn">Ознайомитись</div>
+              </div>
+            </div>
+            <div class="sorting_method lighting_cards_red combin combin-h h">
+              <div class="combin-container h-container l-container h-rotate">
+                <div class="h-header l-header">Сортування Гребінцем</div>
+                <div class="combin-article h-article l-article">
+                  Сортування гребінцем — спрощений алгоритм сортування, розроблений Влодеком
+                  Добошєвічем у 1980 році, і пізніше заново
+                  дослідженим та популяризованим Стефаном Лакеєм та Річардом Боксом, котрі написали
+                  про нього в журналі Byte Magazine у
+                  квітні 1991 р.
+                  <a href="https://uk.wikipedia.org/wiki/%D0%A1%D0%BE%D1%80%D1%82%D1%83%D0%B2%D0%B0%D0%BD%D0%BD%D1%8F_%D0%B3%D1%80%D0%B5%D0%B1%D1%96%D0%BD%D1%86%D0%B5%D0%BC"
+                    target="_blank">Вікіпедія</a>
+                </div>
+                <div class="combin-btn h-btn l-btn">Ознайомитись</div>
+              </div>
+            </div>
+          </div>
+          <div class="sorting_type_wrap_2 simple_sorts f-end">
+            <div class="sorting_type flag_right">прості сортування</div>
+          </div>
+          <div class="sorting_method lighting_cards_red insrt insrt-h h">
+            <div class="insrt-container h-container r-container h-rotate">
+              <div class="h-header r-header">Сортування Вставками</div>
+              <div class="insrt-article h-article r-article">
+                Сортування включенням або сортування вставлянням — простий алгоритм сортування на основі
+                порівнянь. На великих масивах є
+                значно менш ефективним за такі алгоритми, як швидке сортування, пірамідальне сортування
+                та сортування злиттям. Однак,
+                має цілу низку переваг: простота у реалізації ефективний на маленьких масивах.
+                <a href="https://uk.wikipedia.org/wiki/%D0%A1%D0%BE%D1%80%D1%82%D1%83%D0%B2%D0%B0%D0%BD%D0%BD%D1%8F_%D0%B2%D0%BA%D0%BB%D1%8E%D1%87%D0%B5%D0%BD%D0%BD%D1%8F%D0%BC"
+                  target="_blank">Вікіпедія</a>
+              </div>
+              <div class="insrt-btn h-btn r-btn">Ознайомитись</div>
+            </div>
+          </div>
+          <div class="sorting_method lighting_cards_red selct selct-h h">
+            <div class="selct-container h-container l-container h-rotate">
+              <div class="h-header l-header">Сортування Вибором</div>
+              <div class="selct-article h-article l-article">
+                Сортування вибором — простий алгоритм сортування лінійного масиву, на основі вставок.
+                Має ефективність n², що робить
+                його неефективним при сортування великих масивів, і в цілому, менш ефективним за
+                подібний алгоритм сортування
+                включенням.
+                <a href="https://uk.wikipedia.org/wiki/%D0%A1%D0%BE%D1%80%D1%82%D1%83%D0%B2%D0%B0%D0%BD%D0%BD%D1%8F_%D0%B2%D0%B8%D0%B1%D0%BE%D1%80%D0%BE%D0%BC"
+                  target="_blank">Вікіпедія</a>
+              </div>
+              <div class="selct-btn h-btn l-btn">Ознайомитись</div>
+            </div>
+          </div>
+          <div class="sorting_type_wrap_2 simple_sorts f-end">
+            <div class="sorting_type flag_right">ефективні сортування</div>
+          </div>
+          <div class="empty"></div>
+          <div class="sorting_method lighting_cards_red quicks quicks-h h">
+            <div class="quicks-container h-container r-container h-rotate">
+              <div class="h-header r-header">Швидке Сортування</div>
+              <div class="quicks-article h-article r-article">
+                Швидке сортування — алгоритм сортування, розроблений Тоні Гоаром, який не потребує
+                додаткової пам'яті і виконує у
+                середньому <b>O(n log n)</b> операцій. Однак, у найгіршому випадку робить <b>O(n²)</b>
+                порівнянь.
+                <a href="https://uk.wikipedia.org/wiki/%D0%A8%D0%B2%D0%B8%D0%B4%D0%BA%D0%B5_%D1%81%D0%BE%D1%80%D1%82%D1%83%D0%B2%D0%B0%D0%BD%D0%BD%D1%8F"
+                  target="_blank">Вікіпедія</a>
+              </div>
+              <div class="quicks-btn h-btn r-btn">Ознайомитись</div>
+            </div>
+          </div>
+          <div class="sorting_method lighting_cards_red merg merg-h">
+            <div class="merg-container h-container l-container h-rotate">
+              <div class="h-header l-header">Сортування Злиттям</div>
+              <div class="merg-article h-article l-article">
+                Сортування злиттям — алгоритм сортування, в основі якого лежить принцип «Розділяй та
+                володарюй». В основі цього способу
+                сортування лежить злиття двох упорядкованих ділянок масиву в одну впорядковану ділянку
+                іншого масиву.
+                <a href="https://uk.wikipedia.org/wiki/%D0%A1%D0%BE%D1%80%D1%82%D1%83%D0%B2%D0%B0%D0%BD%D0%BD%D1%8F_%D0%B7%D0%BB%D0%B8%D1%82%D1%82%D1%8F%D0%BC"
+                  target="_blank">Вікіпедія</a>
+              </div>
+              <div class="merg-btn h-btn l-btn">Ознайомитись</div>
+            </div>
+          </div>
+          <div class="sorting_method lighting_cards_red pyra pyra-h h">
+            <div class="pyra-container h-container r-container h-rotate">
+              <div class="h-header r-header">Пірамідальність</div>
+              <div class="pyra-article h-article r-article">
+                Пірамідальне сортування — алгоритм сортування, працює гарантовано за Θ операцій при
+                сортуванні n елементів. Кількість
+                застосовуваної службової пам'яті не залежить від розміру масиву.
+                <a href="https://uk.wikipedia.org/wiki/%D0%9F%D1%96%D1%80%D0%B0%D0%BC%D1%96%D0%B4%D0%B0%D0%BB%D1%8C%D0%BD%D0%B5_%D1%81%D0%BE%D1%80%D1%82%D1%83%D0%B2%D0%B0%D0%BD%D0%BD%D1%8F"
+                  target="_blank">Вікіпедія</a>
+              </div>
+              <div class="pyra-btn h-btn r-btn">Ознайомитись</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="footer">
+      <div class="about">
+        <img src="./sources/array.png" alt="">
+        <p>Сайт був виконаний задля сортування чисел і знаходженням кращого методу для цього (а саме найшвидкодійнішого)
+          і представлений як дипломна робота.</p>
+        <b>Володимир Скоробогатько</b>
+      </div>
+      <div class="contact">
+        <h2>Звязок</h2>
+        <ul>
+          <li><img src="./sources/footer/location.png" alt="">вулиця Генерала Чупринки, 103, Львів, Львівська область,
+            79057</li>
+          <li><img src="./sources/footer/email.png" alt="">Email: kn18svs.nltu.lviv.ua</li>
+          <li><img src="./sources/footer/mail.png" alt="">Email:ddiiggyykkookkyy@gmail.com</li>
+          <li><img src="./sources/footer/telegram.png" alt="">@nick_shein</li>
+        </ul>
+      </div>
+      <div class="follow">
+        <h2>Підписуйтесь</h2>
+        <div class="links">
+          <a href="https://t.me/nick_shhh" target="_blank">
+            <img src="./sources/footer/telegram-xxl.png" alt="">
+          </a>
+          <a href="https://twitter.com/nick_shein" target="_blank">
+            <img src="./sources/footer/twitter-xxl.png" alt="">
+          </a>
+          <a href="https://www.instagram.com/nick_shein/" target="_blank">
+            <img src="./sources/footer/instagram-xxl.png" alt="">
+          </a>
+          <a href="https://imgur.com/user/ddiiggyykkookkyy42" target="_blank">
+            <img src="./sources/footer/google-plus-xxl.png" alt="">
+          </a>
+        </div>
+      </div>
+    </footer>
+    <section class="absolute-elements">
+      <div class="popup__bg">
+        <form class="popup">
+          <img src="sources/close.svg" class="close-popup">
+          <h2>Оберіть критерій сортування</h2>
+          <label>
+            <div class="label__text">
+              <div class="growth">
+                <input type="radio" id="contactChoice1" name="contact" value="grow">
+                <label for="contactChoice1">зростання</label>
+              </div>
+              <div class="decreasing">
+                <input type="radio" id="contactChoice2" name="contact" value="decrease">
+                <label for="contactChoice2">спадання</label>
+              </div>
+            </div>
+          </label>
+          <div class="delimiters">
+            <label>
+              <input type="text" name="delimiterIn">
+              <div class="label__text">
+                Роздільник даних у масиві
+              </div>
+            </label>
+            <label>
+              <input type="text" name="delimiterOut">
+              <div class="label__text">
+                Роздільник даних на виході
+              </div>
+            </label>
+            <label>
+              <select class="select-css" name="charsToLeave" id="charsToLeave">
+                <option value="Числа">Числа</option>
+                <option value="Букви">Букви</option>
+                <option value="Інше">Інше</option>
+              </select>
+              <div class="label__text">
+                Дані на виході (решта очищується)
+              </div>
+            </label>
+            <div class="submit-popup">Встановити</div>
+          </div>
+        </form>
+      </div>
+      <div class="tip_menu">
+        <h2 class="tip_menu__title">порада</h2>
+        <p class="tip_menu__article">Для заповнення можна скористатись <a
+            href="https://www.textfixer.com/numbers/random-number-generator.php" target="_blank"
+            class="randgenerator_link">сайтом випадково згенерованих чисел</a></p>
+      </div>
+      <div class="notify-warning">
+        <div class="notify_text">
+          Дані введено некоректно!Довжина повинна сягати більше аніж 1 символ, та не містити нічого
+          окрім цифр та ком.Оновлення
+          через
+        </div>
+        <span id="notification_timer">10</span>
+        <button id="btn_wrng" class="notify_btn btn">X</button>
+      </div>
+      <div class="notify-sucsess">
+        <div class="notify_text">
+          Сортування успішно виконано.
+        </div>
+        <button id="btn_sucs" class="notify_btn btn">X</button>
+      </div>
+    </section>
+    <script src="load.js" type="module"></script>
+  </div>
+</body>
+
+</html>

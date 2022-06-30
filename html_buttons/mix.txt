@@ -1,0 +1,24 @@
+<h3 class="sorting_method__name ">Перемішування</h3>
+                            <div class="content">
+                                <div class="main_picture">
+                                    <img src="./sources/sorts_pictures/mix.gif" alt="bubble sort picture">
+                                </div>
+                                <div class="article">
+                                    Шейкерне сортування відрізняється від бульбашкового тим, що воно двонаправлене: алгоритм переміщається не строго зліва
+                                    направо, а спочатку зліва направо, потім праворуч наліво.
+                                </div>
+                            </div>
+                            <div class="difficulty">
+                                <div class="time">
+                                    <span class="time_diff">Складність за часом</span>
+                                    <div class="times">
+                                        <span class="time_sort best">Гірший час:O(n²)</span>
+                                        <span class="time_sort average">Середній час:O(n²)</span>
+                                        <span class="time_sort worst">Кращий час:O(n)</span>
+                                    </div>
+                                </div>
+                                <div class="memory">
+                                    <span class="memory_usage">Затрати пам'яті</span>
+                                    <div class="memory_value">O(1)</div>
+                                </div>
+                            </div>

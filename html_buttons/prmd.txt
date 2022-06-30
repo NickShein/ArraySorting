@@ -1,0 +1,24 @@
+<h3 class="sorting_method__name ">Пірамідальність</h3>
+                        <div class="content">
+                            <div class="main_picture">
+                                <img src="./sources/sorts_pictures/heap.gif" alt="bubble sort picture">
+                            </div>
+                            <div class="article">При цьому сортуванні спочатку будується піраміда з елементів вихідного масиву. Піраміда (або двійкова купа) - це спосіб
+                            представлення елементів, при якому від кожного вузла може відходити не більше двох відгалужень. А значення у
+                            батьківському вузлі має бути більше значень у його двох дочірніх вузлах.
+                            </div>
+                        </div>
+                        <div class="difficulty">
+                            <div class="time">
+                                <span class="time_diff">Складність за часом</span>
+                                <div class="times">
+                                    <span class="time_sort best">Гірший час:O(n log n)</span>
+                                    <span class="time_sort average">Середній час:O(n log n)</span>
+                                    <span class="time_sort worst">Кращий час:O(n log n) або О(n) при однакових ключах</span>
+                                </div>
+                            </div>
+                            <div class="memory">
+                                <span class="memory_usage">Затрати пам'яті</span>
+                                <div class="memory_value">O(n)</div>
+                            </div>
+                        </div>

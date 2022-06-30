@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./sorting_visualization.css">
+  <link rel="icon" href="sources\SV.png">
+  <title>Sorting visualization</title>
+</head>
+
+<body>
+  <div class="left_container">
+    <section class="tarea-section">
+      <h1 class="tarea-header">ввід даних</h1>
+      <div class="tarea-container">
+        <textarea class="tarea-input"></textarea>
+        <button class="confirm-btn"> відобразити</button>
+      </div>
+    </section>
+    <section class="confirm-section">
+      <h1 class="confirm-header">налаштування</h1>
+      <label>
+        <select class="select-css" name="visualization-list" id="vis-sorts">
+          <option value="Сортування Бульбашкою">Сортування Бульбашкою</option>
+          <option value="Перемішування">Перемішування</option>
+          <option value="Сортування Гребінцем">Сортування Гребінцем</option>
+          <option value="Сортування Вставками">Сортування Вставками</option>
+          <option value="Сортування Вибором">Сортування Вибором</option>
+          <option value="Швидке Сортування">Швидке Сортування</option>
+          <option value="Злиття">Злиття</option>
+          <option value="Пірамідальне Сортування">Пірамідальне Сортування</option>
+          <option value="Сортування Шелла">Сортування Шелла</option>
+          <option value="Тімсорт">Тімсорт</option>
+          <option value="Сортування Комірками">Сортування Комірками</option>
+          <option value="Модифікація Бульбашки">Модифікація Бульбашки</option>
+        </select>
+        <div class="label__text">
+          Сортування для відображення процесу
+        </div>
+      </label>
+      <label>
+        <select class="select-css" name="visualization-list" id="dir-sorts">
+          <option value="Спадання">Спадання</option>
+          <option value="Зростання">Зростання</option>
+        </select>
+        <div class="label__text">
+          Напрямок сортування
+        </div>
+      </label>
+      <button class="subm-btn">Підтвердити</button>
+    </section>
+  </div>
+  <section class="visualize-section">
+    <h1 class="visualize-header">візуалізація</h1>
+    <div class="visualize-output">
+      <div class="visualization_sorts">
+      </div>
+    </div>
+  </section>
+  <script src="load_visualize.js" type="module"></script>
+</body>
+
+</html>

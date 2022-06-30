@@ -1,0 +1,24 @@
+<h3 class="sorting_method__name ">Злиття</h3>
+                        <div class="content">
+                            <div class="main_picture">
+                                <img src="./sources/sorts_pictures/merg.gif" alt="bubble sort picture">
+                            </div>
+                            <div class="article">Сортування злиттям стане в нагоді для таких структур даних, в яких доступ до елементів здійснюється послідовно
+                            (наприклад, для потоків). Тут масив розбивається на дві приблизно рівні частини, і кожна їх сортується окремо. Потім два
+                            відсортовані підмасиви зливаються в один.
+                            </div>
+                        </div>
+                        <div class="difficulty">
+                            <div class="time">
+                                <span class="time_diff">Складність за часом</span>
+                                <div class="times">
+                                    <span class="time_sort best">Гірший час:O(n log n)</span>
+                                    <span class="time_sort average">Середній час:O(n log n)</span>
+                                    <span class="time_sort worst">Кращий час:O(n log n)</span>
+                                </div>
+                            </div>
+                            <div class="memory">
+                                <span class="memory_usage">Затрати пам'яті</span>
+                                <div class="memory_value">O(n) допоміжної</div>
+                            </div>
+                        </div>

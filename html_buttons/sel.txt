@@ -1,0 +1,26 @@
+<h3 class="sorting_method__name ">Сортування вибором</h3>
+                        <div class="content">
+                            <div class="main_picture">
+                                <img src="./sources/sorts_pictures/sel.gif" alt="bubble sort picture">
+                            </div>
+                            <div class="article">Простий алгоритм сортування лінійного масиву, на основі вставок. Має ефективність n2, що робить його неефективним при
+                            сортування великих масивів, і в цілому, менш ефективним за подібний алгоритм сортування включенням. Сортування вибором
+                            вирізняється більшою простотою, ніж сортування включенням, і в деяких випадках, вищою продуктивністю.Спочатку потрібно розглянути підмножину масиву та знайти в ньому максимум (або мінімум). Потім вибране значення міняють
+                            місцями зі значенням першого невідсортованого елемента. Цей крок потрібно повторювати доти, доки в масиві не закінчаться
+                            невідсортовані підмасиви.
+                            </div>
+                        </div>
+                        <div class="difficulty">
+                            <div class="time">
+                                <span class="time_diff">Складність за часом</span>
+                                <div class="times">
+                                    <span class="time_sort best">Гірший час:O(n²)</span>
+                                    <span class="time_sort average">Середній час:O(n²)</span>
+                                    <span class="time_sort worst">Кращий час:O(n²)</span>
+                                </div>
+                            </div>
+                            <div class="memory">
+                                <span class="memory_usage">Затрати пам'яті</span>
+                                <div class="memory_value">O(n) основної, О(1) допоміжної</div>
+                            </div>
+                        </div>
